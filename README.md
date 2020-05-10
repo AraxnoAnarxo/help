@@ -12,3 +12,6 @@ pip freeze > requirements.txt
 
 # установить модули из requirements.txt на сервере
 pip install -r requirements.txt
+
+# установить psycopg2
+python -m pip install psycopg2-binary
