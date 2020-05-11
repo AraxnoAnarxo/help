@@ -15,3 +15,7 @@ pip install -r requirements.txt
 
 # установить psycopg2
 python -m pip install psycopg2-binary
+
+# MySql подключение к базе через доп. модуль
+pip install pymysql
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://.....'
