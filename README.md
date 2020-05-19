@@ -19,3 +19,9 @@ python -m pip install psycopg2-binary
 # MySql подключение к базе через доп. модуль
 pip install pymysql
 SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://.....'
+
+# Создать проект в Django
+django-admin startproject ///
+
+# Создать приложение в Django
+django-admin startapp ///
