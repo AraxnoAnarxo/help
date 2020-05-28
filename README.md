@@ -27,5 +27,5 @@ django-admin startproject ///
 django-admin startapp ///
 
 # запуск контейнера Docker
-docker-compose up -d -build
+docker-compose up -d --build
 
