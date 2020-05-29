@@ -29,6 +29,18 @@ django-admin startapp ///
 # Создать образ в Docker
 docker build -t <name:tag> .
 
+# Поднять контейнер в Docker
+docker run -d -p 5000:5000 <name:tag>
+
 # запуск контейнера Docker
 docker-compose up -d --build
+
+# залогиниться в Docker
+docker login
+
+# Переименовать образ в Docker
+docker tag <oldname> <newname>
+  
+# Сделать push в Docker
+docker tag <name>
 
