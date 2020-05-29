@@ -42,5 +42,5 @@ docker login
 docker tag <oldname> <newname>
   
 # Сделать push в Docker
-docker tag <name>
+docker push <name>
 
