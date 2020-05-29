@@ -26,6 +26,9 @@ django-admin startproject ///
 # Создать приложение в Django
 django-admin startapp ///
 
+# Создать образ в Docker
+docker build -t <name:tag> .
+
 # запуск контейнера Docker
 docker-compose up -d --build
 
