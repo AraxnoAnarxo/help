@@ -32,9 +32,6 @@ docker build -t <name:tag> .
 # Поднять контейнер в Docker
 docker run -d -p 5000:5000 <name:tag>
 
-# запуск контейнера Docker
-docker-compose up -d --build
-
 # залогиниться в Docker
 docker login
 
@@ -43,4 +40,10 @@ docker tag <oldname> <newname>
   
 # Сделать push в Docker
 docker push <name>
+  
+# мирграции Django docker-compose
+docker-compose run web python /code/manage.py makemigrations --noinput
+
+# запуск контейнера Docker docker-compose
+docker-compose up -d --build
 
