@@ -67,5 +67,7 @@ docker exec -it test_postgres psql -U postgres
 # пример подключения к Postgresql
 psql -h localhost -U postgres -d postgres
 
+# forced push to git
+git push -f --set-upstream origin master
 
 
