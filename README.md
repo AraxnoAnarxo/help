@@ -59,7 +59,13 @@ docker-compose up -d --build
 # запуск Docker Postgresql
 docker run --rm   --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data  postgres
 
+docker run --name test_postgres -e POSTGRES_PASSWORD=password1 -d postgres
+
+# пример подключения к Postgresql Docker
+docker exec -it test_postgres psql -U postgres
+
 # пример подключения к Postgresql
 psql -h localhost -U postgres -d postgres
+
 
 
