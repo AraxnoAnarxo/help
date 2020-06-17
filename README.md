@@ -70,4 +70,7 @@ psql -h localhost -U postgres -d postgres
 # forced push to git
 git push -f --set-upstream origin master
 
+# git if push requires pull...
+ git pull --allow-unrelated-histories
+
 
