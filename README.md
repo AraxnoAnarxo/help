@@ -72,5 +72,10 @@ git push -f --set-upstream origin master
 
 # git if push requires pull...
  git pull --allow-unrelated-histories
+ 
+# terminal bash - добавить bin
+$ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
+открыть $ sublime workspace/site/index.html
+
 
 
