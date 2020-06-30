@@ -80,7 +80,12 @@ $ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/lo
 # делаем откат изменений в репозитории для примера на два коммита назад
 git reset --hard HEAD~2
 
-# Можно сделать до какого то определенного коммита по хешу
+# последние 10 комитов смотреть
+git log --oneline -10
+
+'''
+удаление
 git reset --hard HEAD hash
+'''
 
 
