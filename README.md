@@ -77,5 +77,10 @@ git push -f --set-upstream origin master
 $ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
 открыть $ sublime workspace/site/index.html
 
+# делаем откат изменений в репозитории для примера на два коммита назад
+git reset --hard HEAD~2
+
+# Можно сделать до какого то определенного коммита по хешу
+git reset --hard HEAD hash
 
 
