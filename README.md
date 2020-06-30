@@ -83,9 +83,7 @@ git reset --hard HEAD~2
 # последние 10 комитов смотреть
 git log --oneline -10
 
-'''
-удаление
-git reset --hard HEAD hash
-'''
+# heroku 
+heroku apps:rename newname --app oldname
 
 
