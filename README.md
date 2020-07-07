@@ -109,4 +109,34 @@ create table customer(id serial promary key, name varchar(255), phone varchar(30
 # содать таблицу product
 create table product(id serial primary key, name varchar(255), description text, price integer);
 
+# создать таблицу product_photo (связь с product)
+create table product_photo(id serial primary key, url varchar(255), product_id integer references product(id));
+
+# создать таблицу cart (ссылается на customer)
+create table cart(customer_id integer references customer(id), id serial primary key);
+
+# отношение многие ко многим (корзина(заказ) - товары в заказе)
+create table cart_product(cart_id integer references cart(id), product_id integer references product(id));
+
+# создать покупателя (customer)
+insert into customer(name, phone, email) values ('Василий', '02', 'vas@mail.ru');
+insert into customer(name, phone, email) values ('Петр', '03', 'petr@mail.ru');
+
+# выбрать всех из таблицы customer
+select * from customer;
+
+# \x
+Expanded display is on.
+# \x
+Expanded display is off.
+
+# вставить продукты
+insert into product (name, description, price) values ('iPhone','крутой телефон', 100000);
+insert into product (name, description, price) values ('iWatch','крутые часы', 80000);
+
+# вставить фото продуктов
+insert into product_photo(url, product_id) values ('iphone_photo', 1);
+
+# соединить две таблицы (конкретные поля) - url и название товара (с исп. алиасов)
+select pp.*, p.name from product_photo pp join product p on pp.product_id = p.id;
 
