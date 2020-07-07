@@ -64,9 +64,6 @@ docker run --name test_postgres -e POSTGRES_PASSWORD=password1 -d postgres
 # пример подключения к Postgresql Docker
 docker exec -it test_postgres psql -U postgres
 
-# пример подключения к Postgresql
-psql -h localhost -U postgres -d postgres
-
 # forced push to git
 git push -f --set-upstream origin master
 
@@ -85,5 +82,31 @@ git log --oneline -10
 
 # heroku 
 heroku apps:rename newname --app oldname
+
+# POSTGRES
+
+# пример подключения к Postgresql
+psql -h localhost -U postgres -d postgres
+
+# посмотеть, какие есть базы данных
+\l;
+
+# создать базу данных shop
+create database shop;
+
+# приконнектиться к базе данных shop
+\c shop;
+
+# посмотреть, что есть в базе данных
+\d;
+
+# создать таблицу customer с автоинкрементом id
+create table customer(id serial promary key, name varchar(255), phone varchar(30), email varchar(20)));
+
+# посмотреть таблицу customer
+\d customer;
+
+# содать таблицу product
+create table product(id serial primary key, name varchar(255), description text, price integer);
 
 
