@@ -167,5 +167,5 @@ select c.name, coalesce(sum(p.price),0) as order_sum from customer c left join c
 # 5 - выбрать только тех клиентов, которые что-то купили (having фильтрует группы)
 select c.name, coalesce(sum(p.price),0) as order_sum from customer c left join cart on cart.customer_id = c.id left join cart_product cp on cp.cart_id = cart.id left join product p on p.id=cp.product_id group by c.name having sum(p.price)> 0;
 
-# limit, order by (если проблемы с кодировкой - использовать using ~<~)
-select * from customer order by name using ~<~;
+# показать 1 сторку начиная со второй - limit, offset, order by (если проблемы с кодировкой - использовать using ~<~)
+select * from customer order by name using ~<~ limit 1 offset 1;
