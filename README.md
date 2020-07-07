@@ -140,3 +140,19 @@ insert into product_photo(url, product_id) values ('iphone_photo', 1);
 # соединить две таблицы (конкретные поля) - url и название товара (с исп. алиасов)
 select pp.*, p.name from product_photo pp left join product p on pp.product_id = p.id;
 
+# удалить первичный ключ
+alter table product_photo drop constraint product_photo_product_id_fkey;
+
+# удалить строку в таблице
+delete from product_photo where id = 2;
+
+# обновить строку в таблице
+update product_photo set url='iphone_image_2' where id=1;
+
+# создать заказ
+insert into cart(customer_id) values (1);
+
+# создать сразу два товара в корзине
+insert into cart_product (cart_id, product_id) values (1,1), (1,2);
+
+# имена клиентов с общей суммой их заказов (name, общая сумма заказов)
