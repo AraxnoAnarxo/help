@@ -138,5 +138,5 @@ insert into product (name, description, price) values ('iWatch','крутые ч
 insert into product_photo(url, product_id) values ('iphone_photo', 1);
 
 # соединить две таблицы (конкретные поля) - url и название товара (с исп. алиасов)
-select pp.*, p.name from product_photo pp join product p on pp.product_id = p.id;
+select pp.*, p.name from product_photo pp left join product p on pp.product_id = p.id;
 
