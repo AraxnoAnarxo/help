@@ -156,3 +156,13 @@ insert into cart(customer_id) values (1);
 insert into cart_product (cart_id, product_id) values (1,1), (1,2);
 
 # имена клиентов с общей суммой их заказов (name, общая сумма заказов)
+# 1 - все покупатели и их заказы со стоимостью продуктов
+select c.name, cart.id as cart_id, cp.product_id, p.price from customer c left join cart on cart.customer_id = c.id left join cart_product cp on cp.cart_id = cart.id left join product p on p.id=cp.product_id;
+# 2 - просуммировать price по всем покупателям, вывести суммарный price каждого покупателя (group by name, sum(price))
+select c.name, sum(p.price) from customer c left join cart on cart.customer_id = c.id left join cart_product cp on cp.cart_id = cart.id left join product p on p.id=cp.product_id group by c.name;
+# 3 - заменить null на другое значение с пом. coalesce
+select c.name, coalesce(sum(p.price),0) as order_sum from customer c left join cart on cart.customer_id = c.id left join cart_product cp on cp.cart_id = cart.id left join product p on p.id=cp.product_id group by c.name;
+# 4 - отсортировать по сумме;
+select c.name, coalesce(sum(p.price),0) as order_sum from customer c left join cart on cart.customer_id = c.id left join cart_product cp on cp.cart_id = cart.id left join product p on p.id=cp.product_id group by c.name order by order_sum desc;
+# 5 - выбрать только тех клиентов, которые что-то купили (having фильтрует группы)
+select c.name, coalesce(sum(p.price),0) as order_sum from customer c left join cart on cart.customer_id = c.id left join cart_product cp on cp.cart_id = cart.id left join product p on p.id=cp.product_id group by c.name having sum(p.price)> 0;
