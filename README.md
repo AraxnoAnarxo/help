@@ -64,6 +64,9 @@ docker run --name test_postgres -e POSTGRES_PASSWORD=password1 -d postgres
 # пример подключения к Postgresql Docker
 docker exec -it test_postgres psql -U postgres
 
+# Удалить папку из стейджинга
+git rm -r --cached .idea
+
 # forced push to git
 git push -f --set-upstream origin master
 
