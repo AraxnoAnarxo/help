@@ -67,6 +67,9 @@ docker exec -it test_postgres psql -U postgres
 # Удалить папку из стейджинга
 git rm -r --cached .idea
 
+# Удалить все проиндексированные файлы
+git rm -r -f --cached .
+
 # forced push to git
 git push -f --set-upstream origin master
 
